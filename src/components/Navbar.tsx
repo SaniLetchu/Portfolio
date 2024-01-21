@@ -87,7 +87,9 @@ function Navbar(): JSX.Element {
 							>
 								<motion.div variants={buttonVariants}>
 									<ButtonBase>
-										<Typography sx={{ color: whiteSecondary }}>Home</Typography>
+										<Typography sx={{ color: whiteSecondary }}>
+											About
+										</Typography>
 									</ButtonBase>
 								</motion.div>
 								<motion.div variants={buttonVariants}>

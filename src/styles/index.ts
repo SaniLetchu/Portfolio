@@ -41,6 +41,14 @@ export const titleFontSize = {
 	xl: 64,
 };
 
+export const headerFontSize = {
+	xs: 30,
+	sm: 35,
+	md: 40,
+	lg: 45,
+	xl: 45,
+};
+
 export const defaultFontSize = {
 	xs: 15,
 	sm: 15,
@@ -63,4 +71,20 @@ export const profilePictureSize = {
 	md: 225,
 	lg: 225,
 	xl: 225,
+};
+
+export const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.3,
+			repeatDelay: 0.3,
+		},
+	},
+};
+
+export const childVariants = {
+	hidden: { opacity: 0, y: 20 },
+	visible: { opacity: 1, y: 0 },
 };

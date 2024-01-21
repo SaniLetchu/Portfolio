@@ -11,7 +11,7 @@ export default function GradientDivider({
 }: GradientDividerProps): JSX.Element {
 	return (
 		<motion.div
-			animate={{ backgroundSize: ['100%', '150%', '100%'] }}
+			animate={{ backgroundSize: ['100%', '200%', '100%'] }}
 			transition={{
 				duration: 5,
 				ease: 'easeInOut',

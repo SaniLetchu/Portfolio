@@ -1,6 +1,8 @@
-import React from 'react';
-import { Box, Typography, ButtonBase } from '@mui/material';
-import { motion } from 'framer-motion';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useRef, useState, useEffect } from 'react';
+import { Box, Typography } from '@mui/material';
+import { motion, useInView } from 'framer-motion';
+import SkillCard from './SkillCard';
 import {
 	blackPrimary,
 	whitePrimary,
@@ -12,30 +14,62 @@ import {
 	gradientBackgroundStyle,
 	buttonRemoveStyle,
 	buttonFontSize,
+	containerVariants,
+	childVariants,
+	headerFontSize,
 } from '../styles';
 
 export default function Header(): JSX.Element {
-	const containerVariants = {
-		hidden: { opacity: 0 },
+	const ref = useRef(null);
+	const cardsRef = useRef<HTMLDivElement>(null);
+	const isInView = useInView(ref, { once: true });
+	const [skillCardCount, setSkillCardCount] = useState(0);
+
+	useEffect(() => {
+		if (cardsRef.current) {
+			setSkillCardCount(cardsRef.current.children.length);
+		}
+	}, []);
+
+	const animationVariants = {
+		hidden: {
+			opacity: 1,
+			x: '-25vw',
+		},
 		visible: {
 			opacity: 1,
+			x: '125vw',
 			transition: {
-				staggerChildren: 0.3,
-				repeatDelay: 0.3,
+				duration: 25,
+				repeat: Infinity,
+				repeatDelay: skillCardCount * 4 - 25,
+				ease: 'linear',
 			},
 		},
 	};
 
-	const childVariants = {
-		hidden: { opacity: 0, y: 20 },
-		visible: { opacity: 1, y: 0 },
+	const carouselVariants = {
+		hidden: { opacity: 1 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 4,
+			},
+		},
 	};
 
 	return (
 		<motion.div
+			ref={ref}
 			variants={containerVariants}
 			initial="hidden"
-			animate="visible"
+			animate={isInView ? 'visible' : 'hidden'}
+			transition={{
+				staggerChildren: 0.5,
+				ease: 'linear',
+				repeat: Infinity,
+				repeatType: 'loop',
+			}}
 			style={{
 				padding: 40,
 				display: 'flex',
@@ -44,6 +78,7 @@ export default function Header(): JSX.Element {
 				justifyContent: 'center',
 				alignItems: 'center',
 				backgroundColor: blackPrimary,
+				overflow: 'hidden',
 			}}
 		>
 			<motion.div
@@ -89,7 +124,7 @@ export default function Header(): JSX.Element {
 				>
 					<motion.span
 						style={gradientTextStyle}
-						animate={{ backgroundSize: ['100%', '150%', '100%'] }}
+						animate={{ backgroundSize: ['100%', '200%', '100%'] }}
 						transition={{
 							duration: 5,
 							ease: 'easeInOut',
@@ -141,7 +176,7 @@ export default function Header(): JSX.Element {
 						transition={{ type: 'spring', stiffness: 400 }}
 					>
 						<motion.button
-							animate={{ backgroundSize: ['100%', '150%', '100%'] }}
+							animate={{ backgroundSize: ['100%', '200%', '100%'] }}
 							transition={{
 								duration: 5,
 								ease: 'easeInOut',
@@ -196,6 +231,235 @@ export default function Header(): JSX.Element {
 						</motion.button>
 					</motion.div>
 				</Box>
+			</motion.div>
+			<Box />
+			<motion.div
+				ref={cardsRef}
+				variants={carouselVariants}
+				style={{
+					width: '100dvw',
+					display: 'flex',
+					overflow: 'hidden',
+					position: 'relative',
+					minHeight: '100px',
+				}}
+			>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_original_logo_icon_146317.png"
+						text="TypeScript"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/javascript_original_logo_icon_146455.png"
+						text="JavaScript"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_html_icon_130541.png"
+						text="HTML"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_css_icon_130661.png"
+						text="CSS"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_logo_icon_146374.png"
+						text="React"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png"
+						text="Redux"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://static-00.iconduck.com/assets.00/material-ui-icon-2048x1626-on580ia9.png"
+						text="Material UI"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.worldvectorlogo.com/logos/framer-motion.svg"
+						text="Framer"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_logo_icon_146374.png"
+						text="React Native"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png"
+						text="Node.js"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2389/PNG/512/deno_logo_icon_145346.png"
+						text="Deno.js"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_jest_icon_130514.png"
+						text="Jest"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_cypress_icon_130654.png"
+						text="Cypress"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_git_icon_130581.png"
+						text="Git"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/npm_original_wordmark_logo_icon_146402.png"
+						text="npm"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/webpack_original_logo_icon_146300.png"
+						text="Webpack"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/691/PNG/512/google_firebase_icon-icons.com_61475.png"
+						text="Firebase"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_logo_icon_146424.png"
+						text="MongoDB"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/postgresql_plain_logo_icon_146389.png"
+						text="PostgreSQL"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sqlite_icon_130153.png"
+						text="SQLite"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png"
+						text="C++"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://www.sfml-dev.org/download/goodies/sfml-icon-big.png"
+						text="SFML"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/c_original_logo_icon_146611.png"
+						text="C"
+					/>
+				</motion.div>
+				<motion.div
+					variants={animationVariants}
+					style={{ position: 'absolute', overflow: 'hidden' }}
+				>
+					<SkillCard
+						image="https://cdn.icon-icons.com/icons2/112/PNG/512/python_18894.png"
+						text="Python"
+					/>
+				</motion.div>
 			</motion.div>
 		</motion.div>
 	);
