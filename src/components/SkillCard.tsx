@@ -1,11 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-import {
-	blackSecondary,
-	whitePrimary,
-	gradientBackgroundStyle,
-} from '../styles';
+import { blackSecondary, whitePrimary } from '../styles';
 
 interface SkillCardProps {
 	image: string;
@@ -25,11 +21,14 @@ export default function SkillCard({
 				flexDirection: 'column',
 				alignItems: 'center',
 				justifyContent: 'center',
-				backgroundColor: blackSecondary,
 				borderRadius: 5,
 			}}
 		>
-			<img style={{ height: 50, width: 50 }} src={image} alt={text} />
+			<img
+				style={{ height: 50, width: 50, objectFit: 'contain' }}
+				src={image}
+				alt={text}
+			/>
 			<Typography
 				sx={{
 					color: whitePrimary,

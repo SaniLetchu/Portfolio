@@ -34,15 +34,15 @@ export default function Header(): JSX.Element {
 	const animationVariants = {
 		hidden: {
 			opacity: 1,
-			x: '-25vw',
+			x: '-30vw',
 		},
 		visible: {
 			opacity: 1,
-			x: '125vw',
+			x: '130vw',
 			transition: {
-				duration: 25,
+				duration: 22,
 				repeat: Infinity,
-				repeatDelay: skillCardCount * 4 - 25,
+				repeatDelay: skillCardCount * 3.3 - 22,
 				ease: 'linear',
 			},
 		},
@@ -53,7 +53,7 @@ export default function Header(): JSX.Element {
 		visible: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 4,
+				staggerChildren: 3.3,
 			},
 		},
 	};
@@ -246,7 +246,7 @@ export default function Header(): JSX.Element {
 			>
 				<motion.div
 					variants={animationVariants}
-					style={{ position: 'absolute', overflow: 'hidden' }}
+					style={{ position: 'absolute' }}
 				>
 					<SkillCard
 						image="https://cdn.icon-icons.com/icons2/2415/PNG/512/typescript_original_logo_icon_146317.png"
