@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef } from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Grid, Box } from '@mui/material';
 import { motion, useInView } from 'framer-motion';
 import {
 	blackPrimary,
@@ -9,6 +9,8 @@ import {
 	whitePrimary,
 	gradientTextStyle,
 	headerFontSize,
+	secondHeaderFontSize,
+	defaultFontSize,
 } from '../styles';
 
 export default function Education(): JSX.Element {
@@ -60,6 +62,146 @@ export default function Education(): JSX.Element {
 					</motion.span>
 				</Typography>
 			</motion.div>
+			<Grid container spacing={3}>
+				<Grid
+					item
+					xs={12}
+					sm={12}
+					md={6}
+					lg={6}
+					xl={6}
+					sx={{ display: 'flex', flexDirection: 'column' }}
+				>
+					<motion.div
+						variants={childVariants}
+						whileHover={{
+							scale: 1.05,
+						}}
+						style={{
+							width: '100%',
+							display: 'flex',
+							flexDirection: 'column',
+							gap: 20,
+						}}
+					>
+						<Typography
+							sx={{
+								fontFamily: 'Bai Jamjuree, sans-serif',
+								color: whitePrimary,
+								fontSize: secondHeaderFontSize,
+								lineHeight: 1.1,
+								fontWeight: 'bold',
+							}}
+						>
+							Master&apos;s in Software and Service Engineering
+						</Typography>
+						<Box sx={{ display: 'flex', gap: 2 }}>
+							<Typography
+								sx={{
+									color: whitePrimary,
+									fontSize: defaultFontSize,
+									lineHeight: 1.1,
+								}}
+							>
+								Present
+							</Typography>
+							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+								<Typography
+									sx={{
+										color: whitePrimary,
+										fontSize: defaultFontSize,
+										lineHeight: 1.1,
+										fontWeight: 'bold',
+									}}
+								>
+									Aalto University
+								</Typography>
+								<Typography
+									sx={{
+										color: whitePrimary,
+										fontSize: defaultFontSize,
+										lineHeight: 1.3,
+									}}
+								>
+									Software and Service Engineering is the backbone of modern
+									society and economy. Software is needed in almost every
+									industry, in every business, and for every function - from
+									healthcare and information technology to R&D industry or
+									governmental organisations. The Master&apos;s Programme in
+									Computer, Communication and Information Sciences - Software
+									and Service Engineering equips students with some of the most
+									sought after skills in today&apos;s job market, across a wide
+									range of industries.
+								</Typography>
+							</Box>
+						</Box>
+					</motion.div>
+				</Grid>
+				<Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+					<motion.div
+						variants={childVariants}
+						whileHover={{
+							scale: 1.05,
+						}}
+						style={{
+							width: '100%',
+							display: 'flex',
+							flexDirection: 'column',
+							gap: 20,
+						}}
+					>
+						<Typography
+							sx={{
+								fontFamily: 'Bai Jamjuree, sans-serif',
+								color: whitePrimary,
+								fontSize: secondHeaderFontSize,
+								lineHeight: 1.1,
+								fontWeight: 'bold',
+							}}
+						>
+							Bachelor&apos;s in Chemical Engineering
+						</Typography>
+						<Box sx={{ display: 'flex', gap: 2 }}>
+							<Typography
+								sx={{
+									color: whitePrimary,
+									fontSize: defaultFontSize,
+									lineHeight: 1.1,
+								}}
+							>
+								2023
+							</Typography>
+							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+								<Typography
+									sx={{
+										color: whitePrimary,
+										fontSize: defaultFontSize,
+										lineHeight: 1.1,
+										fontWeight: 'bold',
+									}}
+								>
+									Aalto University
+								</Typography>
+								<Typography
+									sx={{
+										color: whitePrimary,
+										fontSize: defaultFontSize,
+										lineHeight: 1.3,
+									}}
+								>
+									In the Chemical engineering major in Aalto Bachelor&apos;s
+									Programme in Science and Technology students learn the basic
+									skills and knowledge required for a transition from anfossil
+									fuel-based to a sustainable society. Utilizing natural
+									resources is vital for a sustainable way of living and will be
+									crucial for future economic growth, as it will provide also
+									new business opportunities.
+								</Typography>
+							</Box>
+						</Box>
+					</motion.div>
+				</Grid>
+			</Grid>
 		</motion.div>
 	);
 }

@@ -13,13 +13,13 @@ export default function App(): JSX.Element {
 		<Box>
 			<Navbar />
 			<Header />
-			<GradientDivider height={3} />
+			<GradientDivider height={2} />
 			<About />
-			<GradientDivider height={3} />
+			<GradientDivider height={2} />
 			<Education />
-			<GradientDivider height={3} />
+			<GradientDivider height={2} />
 			<Experience />
-			<GradientDivider height={3} />
+			<GradientDivider height={2} />
 			<Projects />
 		</Box>
 	);

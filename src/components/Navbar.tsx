@@ -155,7 +155,7 @@ function Navbar(): JSX.Element {
 					)}
 				</AnimatePresence>
 			</Toolbar>
-			<GradientDivider height={3} />
+			<GradientDivider height={2} />
 		</AppBar>
 	);
 }

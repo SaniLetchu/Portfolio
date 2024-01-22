@@ -49,6 +49,14 @@ export const headerFontSize = {
 	xl: 45,
 };
 
+export const secondHeaderFontSize = {
+	xs: 25,
+	sm: 25,
+	md: 25,
+	lg: 25,
+	xl: 25,
+};
+
 export const defaultFontSize = {
 	xs: 15,
 	sm: 15,
