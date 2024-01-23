@@ -58,11 +58,11 @@ export const secondHeaderFontSize = {
 };
 
 export const defaultFontSize = {
-	xs: 15,
-	sm: 15,
-	md: 15,
-	lg: 15,
-	xl: 15,
+	xs: 17,
+	sm: 17,
+	md: 17,
+	lg: 17,
+	xl: 17,
 };
 
 export const buttonFontSize = {

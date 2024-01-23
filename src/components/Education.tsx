@@ -62,7 +62,7 @@ export default function Education(): JSX.Element {
 					</motion.span>
 				</Typography>
 			</motion.div>
-			<Grid container spacing={3}>
+			<Grid container spacing={25}>
 				<Grid
 					item
 					xs={12}

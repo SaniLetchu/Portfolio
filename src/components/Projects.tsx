@@ -67,7 +67,7 @@ export default function Projects(): JSX.Element {
 					</motion.span>
 				</Typography>
 			</motion.div>
-			<Grid container spacing={3}>
+			<Grid container spacing={20}>
 				<Grid
 					item
 					xs={12}
@@ -89,10 +89,10 @@ export default function Projects(): JSX.Element {
 							scale: 1.05,
 						}}
 						style={{
-							width: '100%',
 							display: 'flex',
 							cursor: 'pointer',
 							flexDirection: 'column',
+							alignItems: 'start',
 							gap: 20,
 						}}
 					>
@@ -100,7 +100,6 @@ export default function Projects(): JSX.Element {
 							style={{
 								width: '100%',
 								borderRadius: 10,
-								maxHeight: '600px',
 								objectFit: 'contain',
 							}}
 							alt="Instagram"
@@ -173,9 +172,9 @@ export default function Projects(): JSX.Element {
 							scale: 1.05,
 						}}
 						style={{
-							width: '100%',
 							display: 'flex',
 							flexDirection: 'column',
+							alignItems: 'start',
 							gap: 20,
 						}}
 					>
@@ -183,7 +182,6 @@ export default function Projects(): JSX.Element {
 							style={{
 								width: '100%',
 								borderRadius: 10,
-								maxHeight: '600px',
 								objectFit: 'contain',
 							}}
 							alt="Tower Defense Game"
@@ -246,9 +244,9 @@ export default function Projects(): JSX.Element {
 							scale: 1.05,
 						}}
 						style={{
-							width: '100%',
 							display: 'flex',
 							flexDirection: 'column',
+							alignItems: 'start',
 							gap: 20,
 						}}
 					>
@@ -256,7 +254,6 @@ export default function Projects(): JSX.Element {
 							style={{
 								width: '100%',
 								borderRadius: 10,
-								maxHeight: '600px',
 								objectFit: 'contain',
 							}}
 							alt="Sorting Algorithm Visualizer"
@@ -321,10 +318,10 @@ export default function Projects(): JSX.Element {
 							scale: 1.05,
 						}}
 						style={{
-							width: '100%',
 							display: 'flex',
 							cursor: 'pointer',
 							flexDirection: 'column',
+							alignItems: 'start',
 							gap: 20,
 						}}
 					>
@@ -332,7 +329,6 @@ export default function Projects(): JSX.Element {
 							style={{
 								width: '100%',
 								borderRadius: 10,
-								maxHeight: '600px',
 								objectFit: 'contain',
 							}}
 							alt="Odin Project"
@@ -389,10 +385,10 @@ export default function Projects(): JSX.Element {
 							scale: 1.05,
 						}}
 						style={{
-							width: '100%',
 							display: 'flex',
 							cursor: 'pointer',
 							flexDirection: 'column',
+							alignItems: 'start',
 							gap: 20,
 						}}
 					>
@@ -400,7 +396,6 @@ export default function Projects(): JSX.Element {
 							style={{
 								width: '100%',
 								borderRadius: 10,
-								maxHeight: '600px',
 								objectFit: 'contain',
 							}}
 							alt="Full Stack Open"
