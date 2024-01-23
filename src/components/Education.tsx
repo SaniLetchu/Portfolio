@@ -96,25 +96,16 @@ export default function Education(): JSX.Element {
 							Master&apos;s in Software and Service Engineering
 						</Typography>
 						<Box sx={{ display: 'flex', gap: 2 }}>
-							<Typography
-								sx={{
-									color: whitePrimary,
-									fontSize: defaultFontSize,
-									lineHeight: 1.1,
-								}}
-							>
-								Present
-							</Typography>
 							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
 								<Typography
 									sx={{
 										color: whitePrimary,
 										fontSize: defaultFontSize,
 										lineHeight: 1.1,
-										fontWeight: 'bold',
 									}}
 								>
-									Aalto University
+									<span style={{ fontWeight: 'bold' }}>Aalto University </span>
+									Present
 								</Typography>
 								<Typography
 									sx={{
@@ -162,25 +153,16 @@ export default function Education(): JSX.Element {
 							Bachelor&apos;s in Chemical Engineering
 						</Typography>
 						<Box sx={{ display: 'flex', gap: 2 }}>
-							<Typography
-								sx={{
-									color: whitePrimary,
-									fontSize: defaultFontSize,
-									lineHeight: 1.1,
-								}}
-							>
-								2023
-							</Typography>
 							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
 								<Typography
 									sx={{
 										color: whitePrimary,
 										fontSize: defaultFontSize,
 										lineHeight: 1.1,
-										fontWeight: 'bold',
 									}}
 								>
-									Aalto University
+									<span style={{ fontWeight: 'bold' }}>Aalto University </span>
+									2023
 								</Typography>
 								<Typography
 									sx={{

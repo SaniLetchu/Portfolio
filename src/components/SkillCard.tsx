@@ -14,6 +14,7 @@ export default function SkillCard({
 }: SkillCardProps): JSX.Element {
 	return (
 		<motion.div
+			whileHover={{ scale: 1.1 }}
 			style={{
 				height: 100,
 				width: 100,

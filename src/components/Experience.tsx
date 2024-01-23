@@ -96,26 +96,16 @@ export default function Experience(): JSX.Element {
 							Consultant/System Tester
 						</Typography>
 						<Box sx={{ display: 'flex', gap: 2 }}>
-							<Typography
-								sx={{
-									color: whitePrimary,
-									fontSize: defaultFontSize,
-									lineHeight: 1.1,
-									textAlign: 'center',
-								}}
-							>
-								2023 - Present
-							</Typography>
 							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
 								<Typography
 									sx={{
 										color: whitePrimary,
 										fontSize: defaultFontSize,
 										lineHeight: 1.1,
-										fontWeight: 'bold',
 									}}
 								>
-									Accenture
+									<span style={{ fontWeight: 'bold' }}>Accenture</span> 2023 -
+									Present
 								</Typography>
 								<Typography
 									sx={{
@@ -182,26 +172,16 @@ export default function Experience(): JSX.Element {
 							Mobile Developer
 						</Typography>
 						<Box sx={{ display: 'flex', gap: 2 }}>
-							<Typography
-								sx={{
-									color: whitePrimary,
-									fontSize: defaultFontSize,
-									lineHeight: 1.1,
-									textAlign: 'center',
-								}}
-							>
-								2022 - 2023
-							</Typography>
 							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
 								<Typography
 									sx={{
 										color: whitePrimary,
 										fontSize: defaultFontSize,
 										lineHeight: 1.1,
-										fontWeight: 'bold',
 									}}
 								>
-									Komu Homes
+									<span style={{ fontWeight: 'bold' }}>Komu Homes </span>
+									2022 - 2023
 								</Typography>
 								<Typography
 									sx={{
@@ -224,7 +204,13 @@ export default function Experience(): JSX.Element {
 									tackle intricate tasks and collaborate effectively in a
 									professional setting.
 								</Typography>
-								<Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+								<Box
+									sx={{
+										display: 'flex',
+										gap: 1,
+										flexWrap: 'wrap',
+									}}
+								>
 									<img
 										alt="TypeScript"
 										src="https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white"
