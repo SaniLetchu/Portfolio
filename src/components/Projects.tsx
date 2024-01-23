@@ -433,6 +433,52 @@ export default function Projects(): JSX.Element {
 					</motion.div>
 				</Grid>
 			</Grid>
+			<motion.div
+				variants={childVariants}
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					justifyContent: 'center',
+					gap: 20,
+				}}
+			>
+				<motion.div
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 0.95 }}
+					transition={{ type: 'spring', stiffness: 400 }}
+				>
+					<motion.button
+						onClick={() =>
+							window.open('https://github.com/SaniLetchu', '_blank')
+						}
+						style={{
+							...buttonRemoveStyle,
+							border: `${whiteSecondary} 1px solid`,
+							paddingTop: 10,
+							paddingBottom: 10,
+							paddingLeft: 20,
+							paddingRight: 20,
+							borderRadius: 50,
+						}}
+					>
+						<Typography
+							sx={{
+								fontFamily: 'Bai Jamjuree, sans-serif',
+								color: whitePrimary,
+								fontSize: buttonFontSize,
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+								gap: 1,
+							}}
+						>
+							Want to see more? Check my GitHub
+							<GitHub sx={{ fontSize: buttonFontSize }} />
+						</Typography>
+					</motion.button>
+				</motion.div>
+			</motion.div>
 		</motion.div>
 	);
 }
