@@ -20,6 +20,7 @@ export default function Contact(): JSX.Element {
 
 	return (
 		<motion.div
+			id="Contact"
 			ref={ref}
 			variants={containerVariants}
 			initial="hidden"

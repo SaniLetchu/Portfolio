@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef } from 'react';
 import { Typography, Box, Grid } from '@mui/material';
-import { GitHub, Visibility } from '@mui/icons-material';
+import { GitHub, Visibility, LinkedIn } from '@mui/icons-material';
 import { motion, useInView } from 'framer-motion';
 import {
 	blackPrimary,
@@ -24,6 +24,7 @@ export default function Projects(): JSX.Element {
 
 	return (
 		<motion.div
+			id="Projects"
 			ref={ref}
 			variants={containerVariants}
 			initial="hidden"

@@ -18,6 +18,7 @@ export default function About(): JSX.Element {
 
 	return (
 		<motion.div
+			id="About"
 			ref={ref}
 			variants={containerVariants}
 			initial="hidden"

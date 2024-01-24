@@ -25,6 +25,16 @@ export default function Header(): JSX.Element {
 	const isInView = useInView(ref, { once: true });
 	const [skillCardCount, setSkillCardCount] = useState(0);
 
+	const handleScroll = (destination: string): void => {
+		const element = document.querySelector(destination);
+		if (element) {
+			const yCoordinate =
+				element.getBoundingClientRect().top + window.pageYOffset;
+			const yOffset = -65;
+			window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+		}
+	};
+
 	useEffect(() => {
 		if (cardsRef.current) {
 			setSkillCardCount(cardsRef.current.children.length);
@@ -176,6 +186,7 @@ export default function Header(): JSX.Element {
 						transition={{ type: 'spring', stiffness: 400 }}
 					>
 						<motion.button
+							onClick={() => handleScroll('#Contact')}
 							animate={{ backgroundSize: ['100%', '200%', '100%'] }}
 							transition={{
 								duration: 5,
@@ -209,6 +220,7 @@ export default function Header(): JSX.Element {
 						transition={{ type: 'spring', stiffness: 400 }}
 					>
 						<motion.button
+							onClick={() => handleScroll('#Projects')}
 							style={{
 								...buttonRemoveStyle,
 								border: `${whiteSecondary} 1px solid`,

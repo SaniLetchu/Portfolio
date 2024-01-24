@@ -18,11 +18,20 @@ function Navbar(): JSX.Element {
 
 	const showButton = isOpen || !isEnoughSpace;
 
+	const handleScroll = (destination: string): void => {
+		const element = document.querySelector(destination);
+		if (element) {
+			const yCoordinate =
+				element.getBoundingClientRect().top + window.pageYOffset;
+			const yOffset = -65;
+			window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+		}
+	};
+
 	useEffect(() => {
 		const updateEnoughSpace = (): void => {
 			if (toolbarRef.current) {
 				const toolbarWidth = toolbarRef.current?.offsetWidth;
-				console.log(toolbarWidth);
 				const allowedWidth = 600;
 				setEnoughSpace(toolbarWidth <= allowedWidth);
 			}
@@ -86,32 +95,68 @@ function Navbar(): JSX.Element {
 								variants={containerVariants}
 							>
 								<motion.div variants={buttonVariants}>
-									<ButtonBase>
-										<Typography sx={{ color: whiteSecondary }}>
-											About
-										</Typography>
-									</ButtonBase>
+									<motion.div
+										onClick={() => handleScroll('#About')}
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+										transition={{ type: 'spring', stiffness: 400 }}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											cursor: 'pointer',
+											justifyContent: 'center',
+										}}
+									>
+										<Typography>About</Typography>
+									</motion.div>
 								</motion.div>
 								<motion.div variants={buttonVariants}>
-									<ButtonBase>
-										<Typography sx={{ color: whiteSecondary }}>
-											Education
-										</Typography>
-									</ButtonBase>
+									<motion.div
+										onClick={() => handleScroll('#Education')}
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+										transition={{ type: 'spring', stiffness: 400 }}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											cursor: 'pointer',
+											justifyContent: 'center',
+										}}
+									>
+										<Typography>Education</Typography>
+									</motion.div>
 								</motion.div>
 								<motion.div variants={buttonVariants}>
-									<ButtonBase>
-										<Typography sx={{ color: whiteSecondary }}>
-											Experience
-										</Typography>
-									</ButtonBase>
+									<motion.div
+										onClick={() => handleScroll('#Experience')}
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+										transition={{ type: 'spring', stiffness: 400 }}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											cursor: 'pointer',
+											justifyContent: 'center',
+										}}
+									>
+										<Typography>Experience</Typography>
+									</motion.div>
 								</motion.div>
 								<motion.div variants={buttonVariants}>
-									<ButtonBase>
-										<Typography sx={{ color: whiteSecondary }}>
-											Projects
-										</Typography>
-									</ButtonBase>
+									<motion.div
+										onClick={() => handleScroll('#Projects')}
+										whileHover={{ scale: 1.05 }}
+										whileTap={{ scale: 0.95 }}
+										transition={{ type: 'spring', stiffness: 400 }}
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											cursor: 'pointer',
+											justifyContent: 'center',
+										}}
+									>
+										<Typography>Projects</Typography>
+									</motion.div>
 								</motion.div>
 							</motion.div>
 						)}
@@ -130,6 +175,7 @@ function Navbar(): JSX.Element {
 								transition={{ type: 'spring', stiffness: 400 }}
 							>
 								<motion.button
+									onClick={() => handleScroll('#Contact')}
 									style={{
 										...buttonRemoveStyle,
 										backgroundColor: whitePrimary,

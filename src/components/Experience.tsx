@@ -19,6 +19,7 @@ export default function Experience(): JSX.Element {
 
 	return (
 		<motion.div
+			id="Experience"
 			ref={ref}
 			variants={containerVariants}
 			initial="hidden"

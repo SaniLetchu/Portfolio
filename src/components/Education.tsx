@@ -19,6 +19,7 @@ export default function Education(): JSX.Element {
 
 	return (
 		<motion.div
+			id="Education"
 			ref={ref}
 			variants={containerVariants}
 			initial="hidden"
