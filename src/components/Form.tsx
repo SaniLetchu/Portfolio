@@ -1,13 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useRef } from 'react';
+import React from 'react';
 import { Typography, TextField } from '@mui/material';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
-	containerVariants,
-	childVariants,
 	whitePrimary,
-	gradientTextStyle,
-	headerFontSize,
 	blackSecondary,
 	defaultFontSize,
 	buttonFontSize,
@@ -17,9 +13,6 @@ import {
 } from '../styles';
 
 export default function Form(): JSX.Element {
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
-
 	return (
 		<form
 			action="https://formsubmit.co/sani.letchu@gmail.com"

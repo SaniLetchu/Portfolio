@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef } from 'react';
 import { Typography, Box, Grid } from '@mui/material';
-import { GitHub, Visibility, LinkedIn } from '@mui/icons-material';
+import { GitHub } from '@mui/icons-material';
 import { motion, useInView } from 'framer-motion';
 import {
 	blackPrimary,

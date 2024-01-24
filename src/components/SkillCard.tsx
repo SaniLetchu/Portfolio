@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-import { blackSecondary, whitePrimary } from '../styles';
+import { whitePrimary } from '../styles';
 
 interface SkillCardProps {
 	image: string;

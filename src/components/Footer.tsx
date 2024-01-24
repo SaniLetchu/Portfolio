@@ -1,17 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef } from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography } from '@mui/material';
 import { GitHub, LinkedIn } from '@mui/icons-material';
 import { motion, useInView } from 'framer-motion';
 import {
 	containerVariants,
 	childVariants,
 	whitePrimary,
-	whiteSecondary,
-	gradientTextStyle,
-	headerFontSize,
 	blackPrimary,
-	defaultFontSize,
 } from '../styles';
 
 export default function Footer(): JSX.Element {

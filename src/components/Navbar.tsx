@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { AppBar, Toolbar, Typography, ButtonBase, Box } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import HamburgerButton from './HamburgerButton';
 import GradientDivider from './GradientDivider';
 import {
 	blackPrimary,
 	whitePrimary,
-	whiteSecondary,
 	buttonFontSize,
 	buttonRemoveStyle,
 } from '../styles';

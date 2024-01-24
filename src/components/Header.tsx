@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion, useInView } from 'framer-motion';
+import profile from '../images/profile.jpg';
 import SkillCard from './SkillCard';
 import {
 	blackPrimary,
@@ -16,7 +17,6 @@ import {
 	buttonFontSize,
 	containerVariants,
 	childVariants,
-	headerFontSize,
 } from '../styles';
 
 export default function Header(): JSX.Element {
@@ -109,7 +109,7 @@ export default function Header(): JSX.Element {
 						objectFit: 'cover',
 					}}
 					alt="The house from the offer."
-					src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2"
+					src={profile}
 				/>
 			</motion.div>
 			<motion.div
@@ -181,12 +181,12 @@ export default function Header(): JSX.Element {
 			>
 				<Box sx={{ display: 'flex', gap: 1 }}>
 					<motion.div
+						onClick={() => handleScroll('#Contact')}
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
 						transition={{ type: 'spring', stiffness: 400 }}
 					>
 						<motion.button
-							onClick={() => handleScroll('#Contact')}
 							animate={{ backgroundSize: ['100%', '200%', '100%'] }}
 							transition={{
 								duration: 5,
@@ -215,12 +215,12 @@ export default function Header(): JSX.Element {
 						</motion.button>
 					</motion.div>
 					<motion.div
+						onClick={() => handleScroll('#Projects')}
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.95 }}
 						transition={{ type: 'spring', stiffness: 400 }}
 					>
 						<motion.button
-							onClick={() => handleScroll('#Projects')}
 							style={{
 								...buttonRemoveStyle,
 								border: `${whiteSecondary} 1px solid`,
