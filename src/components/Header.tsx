@@ -125,7 +125,7 @@ export default function Header(): JSX.Element {
 					sx={{
 						fontFamily: 'Bai Jamjuree, sans-serif',
 						color: whitePrimary,
-						width: '90%',
+						width: '100%',
 						fontSize: titleFontSize,
 						lineHeight: 1.1,
 						fontWeight: 'bold',
@@ -159,7 +159,7 @@ export default function Header(): JSX.Element {
 			>
 				<Typography
 					sx={{
-						width: '65%',
+						width: '90%',
 						color: whiteSecondary,
 						fontSize: defaultFontSize,
 						textAlign: 'center',

@@ -75,6 +75,7 @@ export default function Contact(): JSX.Element {
 						color: whitePrimary,
 						fontSize: defaultFontSize,
 						lineHeight: 1.5,
+						textAlign: 'center',
 					}}
 				>
 					Feel free to Contact me by submitting the form and I will get back to
@@ -102,6 +103,7 @@ export default function Contact(): JSX.Element {
 						color: whitePrimary,
 						fontSize: defaultFontSize,
 						lineHeight: 1.5,
+						textAlign: 'center',
 					}}
 				>
 					Or Contact me via these social platforms
