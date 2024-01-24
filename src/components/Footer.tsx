@@ -42,7 +42,7 @@ export default function Footer(): JSX.Element {
 			>
 				<Typography
 					sx={{
-						color: 'rgb(169, 169, 169)',
+						color: 'rgb(142, 142, 142)',
 						fontSize: 15,
 					}}
 				>
@@ -68,6 +68,7 @@ export default function Footer(): JSX.Element {
 					transition={{ type: 'spring', stiffness: 400 }}
 					style={{
 						display: 'flex',
+						cursor: 'pointer',
 						alignItems: 'center',
 						justifyContent: 'center',
 						borderRadius: '50%',
@@ -99,6 +100,7 @@ export default function Footer(): JSX.Element {
 					style={{
 						display: 'flex',
 						alignItems: 'center',
+						cursor: 'pointer',
 						justifyContent: 'center',
 						borderRadius: '50%',
 						height: 25,
