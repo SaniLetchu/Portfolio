@@ -313,6 +313,149 @@ export default function Projects(): JSX.Element {
 					<motion.div
 						variants={childVariants}
 						onClick={() =>
+							window.open(
+								'https://saniletchu.github.io/Where-is-Waldo/',
+								'_blank'
+							)
+						}
+						whileHover={{
+							scale: 1.05,
+						}}
+						style={{
+							display: 'flex',
+							cursor: 'pointer',
+							flexDirection: 'column',
+							alignItems: 'start',
+							gap: 20,
+						}}
+					>
+						<img
+							style={{
+								width: '100%',
+								borderRadius: 10,
+								objectFit: 'contain',
+							}}
+							alt="Where is Waldo"
+							src="https://github.com/SaniLetchu/Portfolio/assets/92727936/eabc5547-151a-4ce2-937f-ec3e2dcbbd1d"
+						/>
+						<Typography
+							sx={{
+								fontFamily: 'Bai Jamjuree, sans-serif',
+								color: whitePrimary,
+								fontSize: secondHeaderFontSize,
+								lineHeight: 1.1,
+								fontWeight: 'bold',
+							}}
+						>
+							Where is Waldo
+						</Typography>
+						<Box sx={{ display: 'flex', gap: 2 }}>
+							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+								<Typography
+									sx={{
+										color: whitePrimary,
+										fontSize: defaultFontSize,
+										lineHeight: 1.3,
+									}}
+								>
+									Classic Where is Waldo Game. However, with other fun
+									characters. There&apos;s a timer and you can save your
+									highscores online.
+								</Typography>
+								<Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+									<img
+										alt="JavaScript"
+										src="https://img.shields.io/badge/JavaScript-323330?logo=javascript&logoColor=F7DF1E"
+									/>
+									<img
+										alt="React"
+										src="https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB"
+									/>
+									<img
+										alt="Material UI"
+										src="https://img.shields.io/badge/Material--UI-%230081CB.svg?logo=material-ui&logoColor=white"
+									/>
+									<img
+										alt="Firebase"
+										src="https://img.shields.io/badge/Firebase-ffca28?logo=firebase&logoColor=black"
+									/>
+								</Box>
+							</Box>
+						</Box>
+					</motion.div>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					sm={12}
+					md={6}
+					lg={6}
+					xl={6}
+					sx={{ display: 'flex', flexDirection: 'column' }}
+				>
+					<motion.div
+						variants={childVariants}
+						onClick={() =>
+							window.open('https://saniletchu.github.io/Battleship/', '_blank')
+						}
+						whileHover={{
+							scale: 1.05,
+						}}
+						style={{
+							display: 'flex',
+							cursor: 'pointer',
+							flexDirection: 'column',
+							alignItems: 'start',
+							gap: 20,
+						}}
+					>
+						<img
+							style={{
+								width: '100%',
+								borderRadius: 10,
+								objectFit: 'contain',
+							}}
+							alt="Battleship"
+							src="https://github.com/SaniLetchu/Portfolio/assets/92727936/6960279f-8b99-421f-b6a4-87d4cc4de0d5"
+						/>
+						<Typography
+							sx={{
+								fontFamily: 'Bai Jamjuree, sans-serif',
+								color: whitePrimary,
+								fontSize: secondHeaderFontSize,
+								lineHeight: 1.1,
+								fontWeight: 'bold',
+							}}
+						>
+							Battleship
+						</Typography>
+						<Box sx={{ display: 'flex', gap: 2 }}>
+							<Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+								<Typography
+									sx={{
+										color: whitePrimary,
+										fontSize: defaultFontSize,
+										lineHeight: 1.3,
+									}}
+								>
+									Classic Battleship Game. Place your ships and play against AI.
+								</Typography>
+							</Box>
+						</Box>
+					</motion.div>
+				</Grid>
+				<Grid
+					item
+					xs={12}
+					sm={12}
+					md={6}
+					lg={6}
+					xl={6}
+					sx={{ display: 'flex', flexDirection: 'column' }}
+				>
+					<motion.div
+						variants={childVariants}
+						onClick={() =>
 							window.open('https://www.theodinproject.com/', '_blank')
 						}
 						whileHover={{

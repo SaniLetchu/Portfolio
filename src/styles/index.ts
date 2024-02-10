@@ -1,6 +1,9 @@
 export const blackPrimary = '#161513';
 export const blackSecondary = '#1C1C22';
 
+// #161513
+// #1C1C22
+
 export const whitePrimary = '#F0F2F5';
 export const whiteSecondary = '#FFFFFF';
 

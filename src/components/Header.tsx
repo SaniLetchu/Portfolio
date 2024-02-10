@@ -108,7 +108,11 @@ export default function Header(): JSX.Element {
 				overflow: 'hidden',
 			}}
 		>
-			<Grid container spacing={5} sx={{ flexDirection: gridDirection }}>
+			<Grid
+				container
+				spacing={5}
+				sx={{ flexDirection: gridDirection, paddingY: 10 }}
+			>
 				<Grid
 					item
 					xs={12}
@@ -263,6 +267,8 @@ export default function Header(): JSX.Element {
 								width: profilePictureSize,
 								borderRadius: imgBorderRadius,
 								objectFit: 'cover',
+								boxShadow:
+									'rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px',
 							}}
 							alt="The house from the offer."
 							src={profile}
@@ -279,6 +285,7 @@ export default function Header(): JSX.Element {
 					overflow: 'hidden',
 					position: 'relative',
 					minHeight: '100px',
+					marginBottom: 50,
 				}}
 			>
 				<motion.div

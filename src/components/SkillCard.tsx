@@ -26,7 +26,12 @@ export default function SkillCard({
 			}}
 		>
 			<img
-				style={{ height: 50, width: 50, objectFit: 'contain' }}
+				style={{
+					height: 50,
+					width: 50,
+					objectFit: 'contain',
+					filter: 'drop-shadow(8px 5px 2px rgb(0,0,0,1))',
+				}}
 				src={image}
 				alt={text}
 			/>
@@ -36,6 +41,7 @@ export default function SkillCard({
 					margin: 0.5,
 					fontSize: 15,
 					fontWeight: 'bold',
+					textShadow: '8px 5px 2px rgb(0,0,0,1)',
 				}}
 			>
 				{text}
