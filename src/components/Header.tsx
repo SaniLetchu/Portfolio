@@ -128,7 +128,8 @@ export default function Header(): JSX.Element {
 							height: '100%',
 							display: 'flex',
 							flexDirection: 'column',
-							justifyContent: 'start',
+							justifyContent: 'center',
+							alignItems: 'center',
 							gap: 20,
 						}}
 					>
@@ -177,7 +178,6 @@ export default function Header(): JSX.Element {
 								gap: 1,
 								width: '100%',
 								justifyContent: 'center',
-								marginTop: 'auto',
 							}}
 						>
 							<motion.div
