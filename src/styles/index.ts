@@ -36,9 +36,9 @@ export const buttonRemoveStyle = {
 export const titleFontSize = {
 	xs: 32,
 	sm: 40,
-	md: 56,
-	lg: 64,
-	xl: 64,
+	md: 45,
+	lg: 50,
+	xl: 50,
 };
 
 export const headerFontSize = {
@@ -76,9 +76,9 @@ export const buttonFontSize = {
 export const profilePictureSize = {
 	xs: 175,
 	sm: 200,
-	md: 225,
-	lg: 225,
-	xl: 225,
+	md: 300,
+	lg: 300,
+	xl: 350,
 };
 
 export const containerVariants = {

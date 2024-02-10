@@ -75,9 +75,6 @@ export default function Education(): JSX.Element {
 				>
 					<motion.div
 						variants={childVariants}
-						whileHover={{
-							scale: 1.05,
-						}}
 						style={{
 							width: '100%',
 							display: 'flex',
@@ -132,9 +129,6 @@ export default function Education(): JSX.Element {
 				<Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
 					<motion.div
 						variants={childVariants}
-						whileHover={{
-							scale: 1.05,
-						}}
 						style={{
 							width: '100%',
 							display: 'flex',

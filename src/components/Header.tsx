@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useState, useEffect } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import { motion, useInView } from 'framer-motion';
 import profile from '../images/profile.jpg';
 import SkillCard from './SkillCard';
@@ -17,7 +17,24 @@ import {
 	buttonFontSize,
 	containerVariants,
 	childVariants,
+	secondHeaderFontSize,
 } from '../styles';
+
+const imgBorderRadius = {
+	xs: '50%',
+	sm: '50%',
+	md: 5,
+	lg: 5,
+	xl: 5,
+};
+
+const gridDirection = {
+	xs: 'column-reverse',
+	sm: 'column-reverse',
+	md: 'row',
+	lg: 'row',
+	xl: 'row',
+};
 
 export default function Header(): JSX.Element {
 	const ref = useRef(null);
@@ -91,160 +108,168 @@ export default function Header(): JSX.Element {
 				overflow: 'hidden',
 			}}
 		>
-			<motion.div
-				variants={childVariants}
-				style={{
-					width: '100%',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Box
-					component="img"
+			<Grid container spacing={5} sx={{ flexDirection: gridDirection }}>
+				<Grid
+					item
+					xs={12}
+					sm={12}
+					md={7}
+					lg={7}
+					xl={7}
 					sx={{
-						height: profilePictureSize,
-						width: profilePictureSize,
-						borderRadius: '50%',
-						objectFit: 'cover',
-					}}
-					alt="The house from the offer."
-					src={profile}
-				/>
-			</motion.div>
-			<motion.div
-				variants={childVariants}
-				style={{
-					width: '100%',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Typography
-					sx={{
-						fontFamily: 'Bai Jamjuree, sans-serif',
-						color: whitePrimary,
-						width: '100%',
-						fontSize: titleFontSize,
-						lineHeight: 1.1,
-						fontWeight: 'bold',
-						textAlign: 'center',
+						display: 'flex',
+						flexDirection: 'column',
 					}}
 				>
-					<motion.span
-						style={gradientTextStyle}
-						animate={{ backgroundSize: ['100%', '200%', '100%'] }}
-						transition={{
-							duration: 5,
-							ease: 'easeInOut',
-							repeat: Infinity,
+					<motion.div
+						variants={childVariants}
+						style={{
+							width: '100%',
+							height: '100%',
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'start',
+							gap: 20,
 						}}
 					>
-						Hello, I&apos;m Sani,{' '}
-					</motion.span>
-					creative
-					<br />
-					developer based in Finland.
-				</Typography>
-			</motion.div>
-			<motion.div
-				variants={childVariants}
-				style={{
-					width: '100%',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Typography
-					sx={{
-						width: '90%',
-						color: whiteSecondary,
-						fontSize: defaultFontSize,
-						textAlign: 'center',
-					}}
-				>
-					I just enjoy making things work. Whether it&apos;s tackling tricky
-					problems or crafting simple solutions, I&apos;m all about hands-on
-					coding and creating practical stuff.
-				</Typography>
-			</motion.div>
-			<motion.div
-				variants={childVariants}
-				style={{
-					width: '100%',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Box sx={{ display: 'flex', gap: 1 }}>
-					<motion.div
-						onClick={() => handleScroll('#Contact')}
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.95 }}
-						transition={{ type: 'spring', stiffness: 400 }}
-					>
-						<motion.button
-							animate={{ backgroundSize: ['100%', '200%', '100%'] }}
-							transition={{
-								duration: 5,
-								ease: 'easeInOut',
-								repeat: Infinity,
-							}}
-							style={{
-								...buttonRemoveStyle,
-								...gradientBackgroundStyle,
-								paddingTop: 10,
-								paddingBottom: 10,
-								paddingLeft: 20,
-								paddingRight: 20,
-								borderRadius: 50,
+						<Typography
+							sx={{
+								fontFamily: 'Bai Jamjuree, sans-serif',
+								color: whitePrimary,
+								width: '100%',
+								fontSize: titleFontSize,
+								lineHeight: 1.1,
+								fontWeight: 'bold',
+								textAlign: 'center',
 							}}
 						>
-							<Typography
-								sx={{
-									fontFamily: 'Bai Jamjuree, sans-serif',
-									color: whitePrimary,
-									fontSize: buttonFontSize,
+							<motion.span
+								style={gradientTextStyle}
+								animate={{ backgroundSize: ['100%', '200%', '100%'] }}
+								transition={{
+									duration: 5,
+									ease: 'easeInOut',
+									repeat: Infinity,
 								}}
 							>
-								GET IN TOUCH
-							</Typography>
-						</motion.button>
-					</motion.div>
-					<motion.div
-						onClick={() => handleScroll('#Projects')}
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.95 }}
-						transition={{ type: 'spring', stiffness: 400 }}
-					>
-						<motion.button
-							style={{
-								...buttonRemoveStyle,
-								border: `${whiteSecondary} 1px solid`,
-								paddingTop: 10,
-								paddingBottom: 10,
-								paddingLeft: 20,
-								paddingRight: 20,
-								borderRadius: 50,
+								Hello, I&apos;m Sani,{' '}
+							</motion.span>
+							creative
+							<br />
+							developer based in Finland.
+						</Typography>
+						<Typography
+							sx={{
+								width: '90%',
+								color: whiteSecondary,
+								fontSize: defaultFontSize,
+								textAlign: 'center',
 							}}
 						>
-							<Typography
-								sx={{
-									fontFamily: 'Bai Jamjuree, sans-serif',
-									color: whitePrimary,
-									fontSize: buttonFontSize,
-								}}
+							I just enjoy making things work. Whether it&apos;s tackling tricky
+							problems or crafting simple solutions, I&apos;m all about hands-on
+							coding and creating practical stuff.
+						</Typography>
+
+						<Box
+							sx={{
+								display: 'flex',
+								gap: 1,
+								width: '100%',
+								justifyContent: 'center',
+								marginTop: 'auto',
+							}}
+						>
+							<motion.div
+								onClick={() => handleScroll('#Contact')}
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+								transition={{ type: 'spring', stiffness: 400 }}
 							>
-								VIEW ALL WORKS
-							</Typography>
-						</motion.button>
+								<motion.button
+									animate={{ backgroundSize: ['100%', '200%', '100%'] }}
+									transition={{
+										duration: 5,
+										ease: 'easeInOut',
+										repeat: Infinity,
+									}}
+									style={{
+										...buttonRemoveStyle,
+										...gradientBackgroundStyle,
+										paddingTop: 10,
+										paddingBottom: 10,
+										paddingLeft: 20,
+										paddingRight: 20,
+										borderRadius: 50,
+									}}
+								>
+									<Typography
+										sx={{
+											fontFamily: 'Bai Jamjuree, sans-serif',
+											color: whitePrimary,
+											fontSize: buttonFontSize,
+										}}
+									>
+										GET IN TOUCH
+									</Typography>
+								</motion.button>
+							</motion.div>
+							<motion.div
+								onClick={() => handleScroll('#Projects')}
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+								transition={{ type: 'spring', stiffness: 400 }}
+							>
+								<motion.button
+									style={{
+										...buttonRemoveStyle,
+										border: `${whiteSecondary} 1px solid`,
+										paddingTop: 10,
+										paddingBottom: 10,
+										paddingLeft: 20,
+										paddingRight: 20,
+										borderRadius: 50,
+									}}
+								>
+									<Typography
+										sx={{
+											fontFamily: 'Bai Jamjuree, sans-serif',
+											color: whitePrimary,
+											fontSize: buttonFontSize,
+										}}
+									>
+										VIEW ALL WORKS
+									</Typography>
+								</motion.button>
+							</motion.div>
+						</Box>
 					</motion.div>
-				</Box>
-			</motion.div>
-			<Box />
+				</Grid>
+				<Grid item xs={12} sm={12} md={5} lg={5} xl={5}>
+					<motion.div
+						variants={childVariants}
+						style={{
+							width: '100%',
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
+							gap: 20,
+						}}
+					>
+						<Box
+							component="img"
+							sx={{
+								height: profilePictureSize,
+								width: profilePictureSize,
+								borderRadius: imgBorderRadius,
+								objectFit: 'cover',
+							}}
+							alt="The house from the offer."
+							src={profile}
+						/>
+					</motion.div>
+				</Grid>
+			</Grid>
 			<motion.div
 				ref={cardsRef}
 				variants={carouselVariants}
