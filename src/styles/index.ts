@@ -69,8 +69,8 @@ export const defaultFontSize = {
 };
 
 export const buttonFontSize = {
-	xs: 12,
-	sm: 13,
+	xs: 15,
+	sm: 15,
 	md: 15,
 	lg: 15,
 	xl: 15,

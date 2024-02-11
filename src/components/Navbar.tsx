@@ -200,7 +200,7 @@ function Navbar(): JSX.Element {
 					)}
 				</AnimatePresence>
 			</Toolbar>
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 		</AppBar>
 	);
 }

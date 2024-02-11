@@ -15,17 +15,17 @@ export default function App(): JSX.Element {
 		<Box>
 			<Navbar />
 			<Header />
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 			<About />
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 			<Education />
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 			<Experience />
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 			<Projects />
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 			<Contact />
-			<GradientDivider height={2} />
+			<GradientDivider height={5} />
 			<Footer />
 		</Box>
 	);
